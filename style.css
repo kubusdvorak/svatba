@@ -15,21 +15,21 @@ body {
 
 /* ===================== Hlavicka ===================== */
 .hlavicka {
-    background: linear-gradient(135deg, #f7d9c4, #ffe4c4);
+    background: lightblue;
     text-align: center;
     padding: 40px 20px;
-    border-bottom: 2px solid #f0b89d;
+    border-bottom: 2px solid pink;
 }
 
 .hlavicka h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 3rem;
-    color: #a0522d;
+    color: #ffffff;
 }
 
 /* ===================== Menu ===================== */
 .menu {
-    background-color: #f0b89d;
+    background-color: #f08a99;
     text-align: center;
     padding: 15px 0;
 }
@@ -62,14 +62,14 @@ body {
 .telo h2 {
     font-family: 'Great Vibes', cursive;
     font-size: 2.2rem;
-    color: #a0522d;
+    color: black;
     margin-bottom: 20px;
 }
 
 .telo h3 {
     font-family: 'Great Vibes', cursive;
     font-size: 1.8rem;
-    color: #a0522d;
+    color: black;
     margin-top: 30px;
     margin-bottom: 15px;
 }
@@ -94,7 +94,7 @@ body {
 }
 
 .icon-circle {
-    background-color: #88c057; /* tmavě zelené kolečko */
+    background-color: #f08a99;
     color: #fff;
     width: 40px;
     height: 40px;
@@ -116,9 +116,9 @@ body {
 .paticka {
     text-align: center;
     padding: 20px;
-    background-color: #f7d9c4;
-    border-top: 2px solid #f0b89d;
-    color: #6b4226;
+    background-color: #ec9ca8;
+    border-top: 2px solid rgb(245, 171, 133);
+    color: #ffffff;
     margin-top: 40px;
 }
 
