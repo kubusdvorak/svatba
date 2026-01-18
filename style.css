@@ -1,0 +1,147 @@
+/* ===================== Reset základních stylů ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================== Tělo stránky ===================== */
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #fff8f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===================== Hlavicka ===================== */
+.hlavicka {
+    background: linear-gradient(135deg, #f7d9c4, #ffe4c4);
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 2px solid #f0b89d;
+}
+
+.hlavicka h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #a0522d;
+}
+
+/* ===================== Menu ===================== */
+.menu {
+    background-color: #f0b89d;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.menu a {
+    font-family: 'Great Vibes', cursive;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.8rem; /* větší než předtím */
+    transition: all 0.3s;
+}
+
+.menu a:hover {
+    color: #ffe4c4;
+    transform: translateY(-2px);
+}
+
+.menu a.active {
+    text-decoration: underline;
+}
+
+/* ===================== Tělo stránky ===================== */
+.telo {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.telo h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #a0522d;
+    margin-bottom: 20px;
+}
+
+.telo h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #a0522d;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* ===================== Štítek obřadu ===================== */
+.obrad-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* mezera mezi řádky */
+    max-width: 400px;
+    margin: 20px 0;
+    background-color: #f0f8f5; /* jemně zelený podklad */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-circle {
+    background-color: #88c057; /* tmavě zelené kolečko */
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.icon-circle i {
+    line-height: 1;          /* odstraní vertikální odsazení */
+    vertical-align: middle;  /* centrování */
+    transform: translateY(0); /* jemné doladění, pokud je potřeba */
+}
+
+/* ===================== Footer ===================== */
+.paticka {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7d9c4;
+    border-top: 2px solid #f0b89d;
+    color: #6b4226;
+    margin-top: 40px;
+}
+
+/* ===================== Responzivita ===================== */
+@media (max-width: 600px) {
+    .menu a {
+        display: block;
+        margin: 10px 0;
+    }
+    .hlavicka h1 {
+        font-size: 2rem;
+    }
+    .telo h2 {
+        font-size: 1.8rem;
+    }
+    .telo h3 {
+        font-size: 1.5rem;
+    }
+    .obrad-info {
+        max-width: 100%;
+    }
+}
+
+div.obrad-info a{
+    color: #ffffff;
+}
