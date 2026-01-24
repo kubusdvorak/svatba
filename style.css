@@ -112,6 +112,18 @@ body {
     transform: translateY(0); /* jemné doladění, pokud je potřeba */
 }
 
+.hostina-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* mezera mezi řádky */
+    max-width: 400px;
+    margin: 20px 0;
+    background-color: #f0f8f5; /* jemně zelený podklad */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 /* ===================== Footer ===================== */
 .paticka {
     text-align: center;
@@ -145,10 +157,17 @@ body {
 div.obrad-info a{
     color: #ffffff;
 }
+
 div.obrad-info a:hover{
     text-decoration: underline;
 }
 
+div.hostina-info a{
+    color: #ffffff;
+}
+div.hostina-info a:hover{
+    text-decoration: underline;
+}
 /* ===================== Program svatebního dne ===================== */
 .program-list {
     list-style: none;
@@ -167,7 +186,7 @@ div.obrad-info a:hover{
 }
 .program-list li .time {
     font-weight: bold;
-    color: #f08a99;
+    color: #ecb9c0;
     font-size: 1.1rem;
 }
 .program-list li .event {
