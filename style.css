@@ -145,3 +145,40 @@ body {
 div.obrad-info a{
     color: #ffffff;
 }
+div.obrad-info a:hover{
+    text-decoration: underline;
+}
+
+/* ===================== Program svatebního dne ===================== */
+.program-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.program-list li {
+    background-color: #f0f8f5;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.program-list li .time {
+    font-weight: bold;
+    color: #f08a99;
+    font-size: 1.1rem;
+}
+.program-list li .event {
+    font-size: 1.1rem;
+    color: #333;
+}
+.program-list li .event:hover {
+    text-decoration: underline;
+}
+.program-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* ===================== Konec stylů ===================== */
