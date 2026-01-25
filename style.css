@@ -88,10 +88,39 @@ body {
 }
 
 /* ===================== Tělo stránky ===================== */
-.telo {
+/* .telo {
     max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
+    background-color: rgba(0,0,0,0.9);
+    background-image: url(img/pozadi.jpg);
+} */
+.telo {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.content-bg {
+    position: relative;
+    padding: 40px 0 0 0;
+
+    background-image: url("img/pozadi.jpg");
+    background-size: cover;
+    background-position: topcenter;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.content-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 248, 240, 0.85);
+    z-index: 1;
+}
+.content-bg > * {
+    position: relative;
+    z-index: 2;
 }
 
 .telo h2 {
@@ -166,7 +195,7 @@ body {
     background-color: #ec9ca8;
     border-top: 2px solid rgb(245, 171, 133);
     color: #ffffff;
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
 /* ===================== Responzivita ===================== */
