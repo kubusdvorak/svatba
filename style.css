@@ -150,7 +150,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px; /* mezera mezi řádky */
-    max-width: 400px;
+    max-width: 360px;
     margin: 20px 0;
     background-color: #f0f8f5; /* jemně zelený podklad */
     padding: 20px;
@@ -187,7 +187,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px; /* mezera mezi řádky */
-    max-width: 400px;
+    max-width: 360px;
     margin: 20px 0;
     background-color: #f0f8f5; /* jemně zelený podklad */
     padding: 20px;
@@ -195,6 +195,14 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+
+.svatba-info-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 /* ===================== Footer ===================== */
 .paticka {
     text-align: center;
@@ -272,8 +280,8 @@ div.hostina-info a:hover{
 }
 
 .medailonek {
-    max-width: 260px;
-    margin: 40px auto;
+    max-width: 240px;   /* bylo 260 */
+    margin: 20px 0;     /* menší vertikální mezera */
     text-align: center;
 
     background: rgba(255, 248, 240, 0.9);
@@ -294,7 +302,7 @@ div.hostina-info a:hover{
 }
 .medailonky {
     display: flex;
-    gap: 40px;
+    gap: 20px;          /* bylo 40 */
     justify-content: center;
     flex-wrap: wrap;
 }
