@@ -17,7 +17,79 @@
         <link rel="icon" href="ico.png">
     </head>
     
-    
+<script>
+    const pocetFotek = 30; // TADY si změň počet fotek v galerii
+
+    const gallery = document.getElementById("gallery");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    const closeBtn = document.querySelector(".lightbox-close");
+    const prevBtn = document.querySelector(".lightbox-prev");
+    const nextBtn = document.querySelector(".lightbox-next");
+
+    let aktualniFotka = 1;
+
+    for (let i = 1; i <= pocetFotek; i++) {
+        const img = document.createElement("img");
+        img.src = `galerie/${i}.jpg`;
+        img.alt = `Svatební fotka ${i}`;
+        img.loading = "lazy";
+
+        img.addEventListener("click", () => {
+            otevriLightbox(i);
+        });
+
+        gallery.appendChild(img);
+    }
+
+    function otevriLightbox(cisloFotky) {
+        aktualniFotka = cisloFotky;
+        lightboxImg.src = `galerie/${aktualniFotka}.jpg`;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+    }
+
+    function zavriLightbox() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImg.src = "";
+    }
+
+    function dalsiFotka() {
+        aktualniFotka++;
+        if (aktualniFotka > pocetFotek) {
+            aktualniFotka = 1;
+        }
+        lightboxImg.src = `galerie/${aktualniFotka}.jpg`;
+    }
+
+    function predchoziFotka() {
+        aktualniFotka--;
+        if (aktualniFotka < 1) {
+            aktualniFotka = pocetFotek;
+        }
+        lightboxImg.src = `galerie/${aktualniFotka}.jpg`;
+    }
+
+    closeBtn.addEventListener("click", zavriLightbox);
+    nextBtn.addEventListener("click", dalsiFotka);
+    prevBtn.addEventListener("click", predchoziFotka);
+
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            zavriLightbox();
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("open")) return;
+
+        if (e.key === "Escape") zavriLightbox();
+        if (e.key === "ArrowRight") dalsiFotka();
+        if (e.key === "ArrowLeft") predchoziFotka();
+    });
+</script>  
 <body>
     <header class="hlavicka">
         <h1>Svatební web Natálky a Kuby</h1>
@@ -41,14 +113,14 @@
             <h2>Naše fotky</h2>
             <p>Na této stránce budou po svatbě k dispozici fotky z naší svatby.</p>
 
-<!--             <div class="gallery">
-               <img src="img/photo1.jpg" alt="Fotka 1">
-                <img src="img/photo2.jpg" alt="Fotka 2">
-                <img src="img/photo3.jpg" alt="Fotka 3">
-                <img src="img/photo4.jpg" alt="Fotka 4">
-                <img src="img/photo5.jpg" alt="Fotka 5">
-                <img src="img/photo6.jpg" alt="Fotka 6">
-            </div>-->
+            <div id="gallery" class="gallery"></div>
+
+            <div id="lightbox" class="lightbox" aria-hidden="true">
+                <button class="lightbox-close" aria-label="Zavřít">&times;</button>
+                <button class="lightbox-prev" aria-label="Předchozí fotka">&#10094;</button>
+                <img id="lightbox-img" src="" alt="Svatební fotka">
+                <button class="lightbox-next" aria-label="Další fotka">&#10095;</button>
+            </div>
         </section>
 
     </main>
