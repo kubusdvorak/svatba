@@ -17,79 +17,7 @@
         <link rel="icon" href="ico.png">
     </head>
     
-<script>
-    const pocetFotek = 27; // TADY si změň počet fotek v galerii
-
-    const gallery = document.getElementById("gallery");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-
-    const closeBtn = document.querySelector(".lightbox-close");
-    const prevBtn = document.querySelector(".lightbox-prev");
-    const nextBtn = document.querySelector(".lightbox-next");
-
-    let aktualniFotka = 1;
-
-    for (let i = 1; i <= pocetFotek; i++) {
-        const img = document.createElement("img");
-        img.src = `galerie/${i}.jpg`;
-        img.alt = `Svatební fotka ${i}`;
-        img.loading = "lazy";
-
-        img.addEventListener("click", () => {
-            otevriLightbox(i);
-        });
-
-        gallery.appendChild(img);
-    }
-
-    function otevriLightbox(cisloFotky) {
-        aktualniFotka = cisloFotky;
-        lightboxImg.src = `galerie/${aktualniFotka}.jpg`;
-        lightbox.classList.add("open");
-        lightbox.setAttribute("aria-hidden", "false");
-    }
-
-    function zavriLightbox() {
-        lightbox.classList.remove("open");
-        lightbox.setAttribute("aria-hidden", "true");
-        lightboxImg.src = "";
-    }
-
-    function dalsiFotka() {
-        aktualniFotka++;
-        if (aktualniFotka > pocetFotek) {
-            aktualniFotka = 1;
-        }
-        lightboxImg.src = `galerie/${aktualniFotka}.jpg`;
-    }
-
-    function predchoziFotka() {
-        aktualniFotka--;
-        if (aktualniFotka < 1) {
-            aktualniFotka = pocetFotek;
-        }
-        lightboxImg.src = `galerie/${aktualniFotka}.jpg`;
-    }
-
-    closeBtn.addEventListener("click", zavriLightbox);
-    nextBtn.addEventListener("click", dalsiFotka);
-    prevBtn.addEventListener("click", predchoziFotka);
-
-    lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-            zavriLightbox();
-        }
-    });
-
-    document.addEventListener("keydown", (e) => {
-        if (!lightbox.classList.contains("open")) return;
-
-        if (e.key === "Escape") zavriLightbox();
-        if (e.key === "ArrowRight") dalsiFotka();
-        if (e.key === "ArrowLeft") predchoziFotka();
-    });
-</script>  
+ 
 <body>
     <header class="hlavicka">
         <h1>Svatební web Natálky a Kuby</h1>
@@ -130,6 +58,80 @@
     <footer class="paticka">
         <p>&copy; 2026 Natálka & Kuba. Všechna práva vyhrazena.</p>
     </footer>
+        <script>
+        const pocetFotek = 27; // TADY si změň počet fotek v galerii
+
+        const gallery = document.getE
+        lementById("gallery");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        const closeBtn = document.querySelector(".lightbox-close");
+        const prevBtn = document.querySelector(".lightbox-prev");
+        const nextBtn = document.querySelector(".lightbox-next");
+
+        let aktualniFotka = 1;
+
+        for (let i = 1; i <= pocetFotek; i++) {
+            const img = document.createElement("img");
+            img.src = `galerie/${i}.jpg`;
+            img.alt = `Svatební fotka ${i}`;
+            img.loading = "lazy";
+
+            img.addEventListener("click", () => {
+                otevriLightbox(i);
+            });
+
+            gallery.appendChild(img);
+        }
+
+        function otevriLightbox(cisloFotky) {
+            aktualniFotka = cisloFotky;
+            lightboxImg.src = `galerie/${aktualniFotka}.jpg`;
+            lightbox.classList.add("open");
+            lightbox.setAttribute("aria-hidden", "false");
+        }
+
+        function zavriLightbox() {
+            lightbox.classList.remove("open");
+            lightbox.setAttribute("aria-hidden", "true");
+            lightboxImg.src = "";
+        }
+
+        function dalsiFotka() {
+            aktualniFotka++;
+            if (aktualniFotka > pocetFotek) {
+                aktualniFotka = 1;
+            }
+            lightboxImg.src = `galerie/${aktualniFotka}.jpg`;
+        }
+
+        function predchoziFotka() {
+            aktualniFotka--;
+            if (aktualniFotka < 1) {
+                aktualniFotka = pocetFotek;
+            }
+            lightboxImg.src = `galerie/${aktualniFotka}.jpg`;
+        }
+
+        closeBtn.addEventListener("click", zavriLightbox);
+        nextBtn.addEventListener("click", dalsiFotka);
+        prevBtn.addEventListener("click", predchoziFotka);
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                zavriLightbox();
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (!lightbox.classList.contains("open")) return;
+
+            if (e.key === "Escape") zavriLightbox();
+            if (e.key === "ArrowRight") dalsiFotka();
+            if (e.key === "ArrowLeft") predchoziFotka();
+        });
+    </script> 
     <script src="hlavicka.js"></script>
 </body>
 </html>
